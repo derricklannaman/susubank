@@ -8,4 +8,7 @@ class HomeController < ApplicationController
 
   def contact
   end
+
+  def learn
+  end
 end
