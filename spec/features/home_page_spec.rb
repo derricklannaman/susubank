@@ -22,16 +22,18 @@ describe 'When visiting the home page' do
     expect(page).to have_link("Learn More", learn_path)
   end
 
-
-
-
   it "allows the 'About' link to visit About page" do
     visit "/"
     click_link "About"
     expect(current_path).to eq(about_path)
   end
 
+  it "allows the 'Contact' link to visit About page" do
+    visit "/"
+    click_link "Contact"
+    expect(current_path).to eq(contact_path)
+  end
 
-  it "allows the 'Contact' link to visit About page"
+
   it "allows the 'Learn More' page to visit Learn More"
 end
