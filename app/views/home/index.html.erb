@@ -1,15 +1,9 @@
 <%= link_to "About", about_path %>
 <%= link_to "Contact", contact_path %>
 <%= link_to "Learn More", learn_path %>
-<h1>SusuBank</h1>
+
+<h1><%= link_to "SusuBank", root_path %></h1>
+
 <p>Welcome the time is now <%= Time.now %></p>
 
-<div>
-  <% if susu_user_signed_in?  %>
-    Signed in as <%= current_susu_user.email %>
-    <%= link_to "Sign Out", destroy_susu_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "Register", new_susu_user_registration_path %>
-    <%= link_to "Sign In", new_susu_user_session_path %>
-  <% end %>
-</div>
+<%= render 'shared/register_or_sign_in'  %>
