@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'dashboard', to: 'dashboard#show'
+
   devise_for :susu_users
   root 'home#index'
 
