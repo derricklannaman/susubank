@@ -9,6 +9,4 @@ Rails.application.routes.draw do
   get 'learn', to: 'home#learn'
   get 'dashboard', to: 'dashboard#show'
 
-  resource :susu_users
-
 end
