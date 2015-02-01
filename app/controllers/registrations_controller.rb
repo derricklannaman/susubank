@@ -1,11 +1,11 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def new
-    @user = SusuUser.new()
+    @user = SusuUser.new
   end
 
   def create
-    @user = SusuUser.new(user_params)
+    find_user
     save_user_or_show_new @user
   end
 
@@ -17,6 +17,10 @@ class RegistrationsController < Devise::RegistrationsController
     def user_params
       params.require(:susu_user).permit( :first_name, :last_name, :email,
                                          :password, :password_confirmation)
+    end
+
+    def find_user
+      @user = SusuUser.new(user_params)
     end
 
     def after_sign_up_path_for(user)
