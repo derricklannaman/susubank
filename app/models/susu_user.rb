@@ -1,7 +1,6 @@
 class SusuUser < ActiveRecord::Base
 
   has_one :dashboard
-
   after_save :create_dashboard
 
   # Include default devise modules. Others available are:

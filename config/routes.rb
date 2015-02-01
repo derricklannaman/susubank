@@ -1,17 +1,14 @@
 Rails.application.routes.draw do
 
-  get 'dashboard', to: 'dashboard#show'
-
-  # resources :dashboard do
-  #   member do
-  #     get 'banker'
-  #   end
-  # end
-
-  devise_for :susu_users
   root 'home#index'
+
+  devise_for :susu_users, controllers: { registrations: "registrations" }
 
   get 'about', to: 'home#about'
   get 'contact', to: 'home#contact'
   get 'learn', to: 'home#learn'
+  get 'dashboard', to: 'dashboard#show'
+
+  resource :susu_users
+
 end
